@@ -1,6 +1,3 @@
-//#include <iostream>// cout, endl
-//#include <iomanip> // setw, setfill
-//#include <cstring> // strlen
 #include "../include/tablePoints.h"
 void tablePoints(int points1,int points2){
   char column1[] = " PLAYER ";//8

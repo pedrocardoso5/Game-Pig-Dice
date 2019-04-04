@@ -3,6 +3,7 @@
 #include "../include/game1.h"
 #include "../include/cpu.h"
 
+
 int main(){
 
 	int choice;
@@ -19,14 +20,15 @@ int main(){
 
 
 
-	std::cout << "1 - Iniciar jogo: " << "\n";
-	std::cout << "2 - Instrucoes: " << "\n";
-	std::cout << "3 - Sair: " << "\n";
+	std::cout << "1 - Start Game: " << "\n";
+	std::cout << "2 - Instructions: " << "\n";
+	std::cout << "3 - Exit: " << "\n";
 	std::cin >> choice;
 
 	switch(choice){
 		case 1:
-			std::cout << "Selecione o tipo de partida:" << "\n";
+			GameInterface();
+			std::cout << "Select the type of game:" << "\n";
 			std::cin >> choice2;
 			if(choice2 == 1){//1 p player
 				player(playerchoise);
@@ -37,15 +39,18 @@ int main(){
 			break;
 			
 		case 2:	
-			//system("cls");
-			//puts("Instrucoes:");
+			std::cout << "The game is organized in turns" << "\n";
+			std::cout << "The player who scores 100 or more points at the end of the game is the winner." << "\n";
+			std::cout << "Each turn, the same player keeps rolling the dice until the player decides to hold" << "\n";
+			std::cout << "If he chooses to hold, the total points accumulated in the round are saved" << "\n";
+			std::cout << "But if the face give 1, the total points of the turn will become 0 and becomes the opponent's turn" << "\n";
 			break;
 		
 		case 3:
 			break;
 				
 		default:
-			std::cout << "Opcao invalida \n";
+			std::cout << "Invalid Option!\n";
 			//break;
 	}
 	

@@ -6,7 +6,6 @@ int random_numbers(){
     std::uniform_int_distribution<std::mt19937::result_type> dist6( 1, 6 );
 
     return dist6(rng);
-
 }
 
 int round(int rel_points){
@@ -115,3 +114,5 @@ void player(playerpointer func){
 		}
 	}
 }
+
+

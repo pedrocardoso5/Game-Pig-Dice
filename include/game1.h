@@ -5,8 +5,9 @@
 #include <cstdlib>
 #include <ctime>
 #include <random>
-#include "../include/cpu.h"
 #include "../include/tablePoints.h"
+#include "../include/cpu.h"
+#include "../include/GameInterface.h"
 
 int random_numbers();
 
