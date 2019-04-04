@@ -7,6 +7,18 @@ int main(){
 
 	int choice;
 	int choice2;
+
+ std::cout <<" _____ _         _____  _           \n";
+ std::cout <<"|  __ (_)       |  __ |(_)          \n";
+ std::cout <<"| |__) |  __ _  | |  | |_  ___ ___  \n";
+ std::cout <<"|  ___/ |/ _` | | |  | | |/ __/ _ | \n";
+ std::cout <<"| |   | | (_| | | |__| | | (_|  __/ \n";
+ std::cout <<"|_|   |_||__, | |_____/|_||___|___| \n";
+ std::cout <<"          __/ |                     \n"; 
+ std::cout <<"         |___/                      \n\n\n";
+
+
+
 	std::cout << "1 - Iniciar jogo: " << "\n";
 	std::cout << "2 - Instrucoes: " << "\n";
 	std::cout << "3 - Sair: " << "\n";
@@ -33,7 +45,7 @@ int main(){
 			break;
 				
 		default:
-			printf("Opcao invalida");
+			std::cout << "Opcao invalida \n";
 			//break;
 	}
 	
