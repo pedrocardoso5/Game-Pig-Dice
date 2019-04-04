@@ -1,6 +1,6 @@
-output: ./obj/main.o ./obj/game1.o ./obj/cpu.o
+output: ./obj/main.o ./obj/game1.o ./obj/cpu.o ./obj/tablePoints.o
 	mkdir -p bin
-	g++ -std=c++11 ./obj/main.o ./obj/game1.o ./obj/cpu.o -o ./bin/exe
+	g++ -std=c++11 ./obj/main.o ./obj/game1.o ./obj/cpu.o ./obj/tablePoints.o -o ./bin/exe 
 
 ./obj/main.o: ./source/main.cpp 
 	mkdir -p obj
@@ -13,6 +13,10 @@ output: ./obj/main.o ./obj/game1.o ./obj/cpu.o
 ./obj/cpu.o: ./source/cpu.cpp ./include/cpu.h
 	mkdir -p obj
 	g++ -c ./source/cpu.cpp -o ./obj/cpu.o -std=c++11
+	
+./obj/tablePoints.o: ./source/tablePoints.cpp ./include/tablePoints.h
+	mkdir -p obj
+	g++ -c ./source/tablePoints.cpp -o ./obj/tablePoints.o -std=c++11
 
 clean:
 	rm -r obj/ bin/*

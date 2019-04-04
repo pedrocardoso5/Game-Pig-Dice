@@ -1,6 +1,4 @@
 #include "../include/game1.h"
-
-
 int random_numbers(){
 
     std::random_device dev;
@@ -9,11 +7,7 @@ int random_numbers(){
 
     return dist6(rng);
 
-//return dice_roll;
 }
-/*ela vai aleatorizar um numero e vai guardar ele no total da rodada
-quando o numero aleatorizado for 1, ela zera o total de pontos e retorna ele 
-*/
 
 int round(int rel_points){
 	int points = 0;
@@ -35,6 +29,8 @@ int playerchoise(int turn_total, int my_pts, int opponent_pts, int my_turn_rolls
     std::cin >> option;
     return option;
 }
+
+
 typedef int (* playerpointer)(int, int, int, int);
 //playerpointer = &playerchoise;
 
@@ -47,8 +43,12 @@ void player(playerpointer func){
 	int game_play1,game_play2;
 	int option = 0;
 	int dice_count = 0;
-	
+	//char name1[];
+	//char name2[];
+
 	while(true){
+		//std::cout << "Escreva o nome do Player 1:" << "\n";
+		//std::cin >> name1;
 		std::cout << "---PLAYER 1 ROUND---" << "\n\n\n";
 		rel_points_player1 = 0;
 		while(true){//jogada player 1
@@ -57,7 +57,8 @@ void player(playerpointer func){
 			rel_points_player1 = game_play1;
 
 			if(game_play1 == 0){
-				std::cout << "TOTAL ---:" << point_player1 << std::endl;
+				//std::cout << "TOTAL ---:" << point_player1 << std::endl;
+				tablePoints(point_player1,point_player2);
 				break;
 			}
 			std::cout << "total de pontos da rodada:" << rel_points_player1 << std::endl; 
@@ -65,7 +66,8 @@ void player(playerpointer func){
     		std::cin >> option;
     		if(option == 1 || game_play1 == 0){
     			point_player1 += rel_points_player1;
-    			std::cout << "total de pontos ---:" << point_player1 << std::endl; 
+    			//std::cout << "total de pontos ---:" << point_player1 << std::endl; 
+    			tablePoints(point_player1,point_player2);
     			break;
     		}
     	}
@@ -73,19 +75,23 @@ void player(playerpointer func){
     	if(point_player1 >= 100){
 			std::cout << "congratulations player 1" << "\n";
 			break;
-		}   
+		}  
 
+		//std::cout << "Escreva o nome do Player 2:" << "\n";
+		//std::cin >> name2;
     	std::cout << "---PLAYER 2 ROUND---" << "\n\n\n";
     	rel_points_player2 = 0;
     	dice_count = 0;
-    	while(true){//jogada player 1
-			game_play2 = round(rel_points_player2);
+
+    	while(true){//jogada player 2
+    		game_play2 = round(rel_points_player2);
 			dice_count += 1;
 			//std::cout << game_play1 << std::endl;//mudar caso comece com 1 
 			rel_points_player2 = game_play2;
 
 			if(game_play2 == 0){
-				std::cout << "TOTAL ---:" << point_player2 << std::endl;
+				//std::cout << "TOTAL ---:" << point_player2 << std::endl;
+				tablePoints(point_player1,point_player2); 
 				break;
 			}
 			//option = func();
@@ -96,12 +102,14 @@ void player(playerpointer func){
     		std::cout << "dados " << dice_count << std::endl;
     		if(option == 1 || game_play2 == 0){
     			point_player2 += rel_points_player2;
-    			std::cout << "total de pontos ---:" << point_player2 << std::endl; 
+    			//std::cout << "total de pontos ---:" << point_player2 << std::endl;
+    			tablePoints(point_player1,point_player2); 
     			break;
     		}
-    	}	
+    		
 
-		if(point_player2 >= 100){
+    	}
+    	if(point_player2 >= 100){
 			std::cout << "congratulations player 2" << "\n";
 			break;
 		}

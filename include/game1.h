@@ -6,6 +6,7 @@
 #include <ctime>
 #include <random>
 #include "../include/cpu.h"
+#include "../include/tablePoints.h"
 
 int random_numbers();
 
