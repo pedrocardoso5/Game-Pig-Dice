@@ -5,7 +5,7 @@ Game pig dice with option to player vs player and player vs cpu in C++
 + Pedro Henrique Alves Cardoso
 + Mariana Medeiros Pires
 
-## Commpilation
+## Compilation
 To compilation of this game you need:
 + make
 + g++
